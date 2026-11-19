@@ -4,18 +4,18 @@ Lab 08: Open Ended Lab | Class BESE-17A | Fall 2026
 Instructor: Dr. Momina Moetesum | Lab Engineer: Ms. Sundas Dawood
 
 GROUP MEMBERS:
--------------
+
 Muhammad Nouman Khan – 589719
 Manal Mahfooz Raja – 593630
 Raheel Khan – 585476
 
 GITHUB REPOSITORY:
------------------
+
 https://github.com/MNouman69/Encryption-Decryption-Game
 
 
 1. GAME CONCEPT:
-===============
+
 
 A text-based game where the player acts as a codebreaker. Each of the three
 levels shows a coded message, and the player must decode it to move forward.
@@ -28,16 +28,16 @@ player never sees the original word. If the player is stuck, they can type
 
 
 2. HOW TO PLAY:
-==============
+
 
 Requirements:
-------------
+
 Any C++ compiler (Visual Studio).
 g++ OPEN-ENDED-LAB-08.cpp -o game
 ./game
 
 Steps:
------
+
 1. Read the instructions shown at the start of the game.
 2. Each level shows a coded message in brackets.
 3. Decode it and type your answer after the prompt, then press Enter.
@@ -49,7 +49,7 @@ Steps:
 8. At the end the game shows the levels passed, total points and your rank.
 
 Sample run (all levels passed, no hints used):
----------------------------------------------
+
 Level 1: Decode a word that was shifted 3 letters forward
 Level 2: Un-reverse the given word
 Level 3: Convert the 8-bit binary code back to its capital letter
@@ -82,7 +82,7 @@ Total points earned: 90
 You are a heroic player
 
 Sample run (using hints in Level 1):
------------------------------------
+
 Decode this shifted word (vqdnh) and enter the original word (or type hint): hint
 Hint 1: Move every letter 3 places back (like d becomes a) ( -5 Points for using first hint )
 Decode this shifted word (vqdnh) and enter the original word (or type hint): hint
@@ -96,23 +96,23 @@ Congrats! You have passed the level 1
 
 
 3. LEVELS:
-=========
+
 
 Level 1 – Caesar cipher (shift 3):
----------------------------------
+
 The player decodes a word that was shifted 3 letters forward, e.g. fdw
 becomes cat.
 Hint 1: move every letter 3 places back.
 Hint 2: the first letter of the word.
 
 Level 2 – Text reversal:
------------------------
+
 The player un-reverses a word, e.g. tsuN becomes Nust.
 Hint 1: the first letter of the word.
 Hint 2: the letter at the second position.
 
 Level 3 – Binary / ASCII:
-------------------------
+
 The player converts an 8-bit code back to its capital letter, e.g. 01000001
 becomes A.
 Hint 1: how to convert (multiply each digit by powers of 2, increasing from
@@ -121,10 +121,10 @@ Hint 2: the ASCII value of the letter.
 
 
 4. POINTS, PENALTIES AND ATTEMPTS:
-=================================
+
 
 Points division:
----------------
+
 Passing a level earns points:
 Level 1 = 20
 Level 2 = 30
@@ -134,7 +134,7 @@ The maximum is 90 (all levels passed with no wrong answers and no hints).
 Reason: Harder levels are worth more, and Level 3 gives the largest reward.
 
 Penalties for wrong answers:
----------------------------
+
 Every wrong answer costs points:
 Level 1:   -5
 Level 2:  -10
@@ -144,7 +144,7 @@ Reason: The penalty grows with difficulty, so careless guessing in later
 levels hurts more.
 
 Penalties for hints:
--------------------
+
 Each level allows a maximum of 2 hints:
 First hint:   -5 points
 Second hint: -10 points
@@ -155,21 +155,21 @@ Hints do not use attempts, but they lower the score. Using both hints in all
 three levels costs 45 points in total.
 
 Attempts:
---------
+
 The player has 10 attempts in total, shared by all levels. Each wrong answer
 uses one attempt, so mistakes in an early level leave fewer chances for the
 later ones. Typing "hint" never uses an attempt. If the attempts reach 0, the
 game prints "You ran out of attempts" and moves to the final result.
 
 Negative points:
----------------
+
 Wrong answers and hints can push the score below zero during play. At the
 end, any negative total is reset to 0, because a negative score makes no
 sense for a player and would break the rank ranges.
 
 
 5. LEVEL UNLOCKING (WHAT IF LEVEL 1 FAILS?):
-===========================================
+
 
 Levels are nested: Level 2 opens only after Level 1 is passed, and Level 3
 only after Level 2. A level fails only when the attempts run out, so if
@@ -177,7 +177,7 @@ Level 1 fails, the game ends and Levels 2 and 3 never start.
 
 
 6. RANKS:
-========
+
 
 Ranks are based on the final points:
 
@@ -194,7 +194,7 @@ gives 90 - 45 = 45 points, which is Pro).
 
 
 7. INPUT HANDLING:
-=================
+
 
 Answers in Levels 1 and 2 are not case-sensitive, so CAT, Cat and cat all
 work. The word "hint" is also not case-sensitive (HINT and Hint work).
@@ -204,7 +204,7 @@ a single character, and a lowercase letter is treated as a wrong answer
 
 
 8. DESIGN DECISIONS:
-===================
+
 
 - Program encrypts, player decrypts: the same cipher functions create the
   puzzle, so the game never relies on hardcoded coded words.
@@ -222,7 +222,7 @@ a single character, and a lowercase letter is treated as a wrong answer
 
 
 9. PROGRAMMING CONCEPTS USED:
-============================
+
 
 - Functions with return values and prototypes
 - Pass by reference (hint() changes hints_used of the calling level)
@@ -235,7 +235,7 @@ a single character, and a lowercase letter is treated as a wrong answer
 - ASCII arithmetic
 
 Helper functions:
-----------------
+
 caepher()         Shifts letters forward (Caesar cipher, Level 1)
 reversetext()     Reverses a string (Level 2, also used by binary_convert)
 binary_convert()  Converts a character to 8-bit binary (Level 3)
@@ -247,7 +247,7 @@ instructions()    Prints the rules before the game starts
 
 
 10. TEST RESULTS:
-================
+
 
 The game was compiled and run for each of these scenarios.
 
@@ -291,7 +291,7 @@ The game was compiled and run for each of these scenarios.
 
 
 11. GROUP CONTRIBUTIONS:
-=======================
+
 
 Muhammad Nouman Khan (589719)
 - Level 1 (Caesar cipher): level1(); cipher function caepher()
